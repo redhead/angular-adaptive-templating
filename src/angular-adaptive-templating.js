@@ -126,14 +126,14 @@
       /**
        * Decorates the $http.get method, rewriting the request URL to enable adaptive templating.
        */
-      $provide.decorator('$http', function($delegate) {
+      $provide.decorator('$http', ['$delegate', function($delegate) {
         var getFn = $delegate.get;
         $delegate.get = function () {
           arguments[0] = adaptiveTemplatingProvider.rewriteUrl(arguments[0]);
           return getFn.apply(this, arguments);
         };
         return $delegate;
-      });
+      }]);
     }]);
 
 })();
