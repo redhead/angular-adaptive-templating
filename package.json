@@ -1,6 +1,7 @@
 {
   "name": "angular-adaptive-templating",
   "version": "1.0.0",
+  "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "gulp": "~3.6.2",
